@@ -17,7 +17,7 @@ public interface AnalyzeNoiseApiSpec {
     @Operation(
             summary = "소음 분석 API"
     )
-    @PostMapping(value = "/api/analysis/brainwave", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(value = "/api/analysis/noise", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     BaseResponse<Void> analyze(
             @CurrentUser Long userNo,
             @RequestParam("file") MultipartFile microwave
