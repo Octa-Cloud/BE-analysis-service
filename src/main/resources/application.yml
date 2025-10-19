@@ -30,6 +30,10 @@ spring:
     url: ${RDB_URL}
     password: ${RDB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
 
   data:
     redis:
@@ -88,7 +92,7 @@ management:
       enabled: true
   metrics:
     tags:
-      application: user-service
+      application: analysis-service
     distribution:
       percentiles-histogram:
         http.server.requests: true
