@@ -16,7 +16,7 @@ public class PeriodicReportService {
     private final PeriodicReportRepository periodicReportRepository;
 
     public Optional<PeriodicReport> findByUserNoAndStartedAt(Long userNo, LocalDate startedAt, DurationType type) {
-        return periodicReportRepository.findByUserNoAndPeriodStartedAtAndDurationType((userNo, startedAt, type);
+        return periodicReportRepository.findByUserNoAndPeriodStartedAtAndDurationType(userNo, startedAt, type);
     }
 
     public void save(PeriodicReport periodicReport) {
