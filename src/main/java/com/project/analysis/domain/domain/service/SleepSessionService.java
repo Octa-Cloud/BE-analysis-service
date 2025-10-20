@@ -24,8 +24,8 @@ public class SleepSessionService {
         sleepSessionRepository.save(sleepSession);
     }
 
-    public SleepSession findByUserNo(Long userNo, LocalDate now) {
-        return sleepSessionRepository.findByUserNoAndSleepDate(userNo, now)
+    public SleepSession findByUserNo(Long userNo, LocalDate date) {
+        return sleepSessionRepository.findByUserNoAndSleepDate(userNo, date)
                 .orElseThrow(() -> new RestApiException(_NOT_FOUND));
     }
 }

@@ -29,4 +29,8 @@ public class AnalysisStep {
 
     @Column(name = "content", nullable = false, length = 255)
     private String content;
+
+    public void updateAnalysisDetail(AnalysisDetail analysisDetail) {
+        this.analysisDetail = analysisDetail;
+    }
 }

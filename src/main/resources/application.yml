@@ -30,6 +30,12 @@ spring:
     url: ${RDB_URL}
     password: ${RDB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-isolation: READ_COMMITTED
+      connection-init-sql: |
+        SET SESSION binlog_format='ROW';
+        SET SESSION expire_logs_days=7;
+        SET SESSION transaction_isolation='READ-COMMITTED';
   servlet:
     multipart:
       max-file-size: 50MB
@@ -58,12 +64,13 @@ jwt-properties:
 
 logging:
   level:
-    com.project.user.global.security.TokenProvider: DEBUG
+    com.project.analysis.global.security.TokenProvider: DEBUG
+    com.project.analysis.global.resolver.CurrentUserArgumentResolver: DEBUG
+    com.project.analysis: DEBUG
     root: INFO
     org.springframework: DEBUG
     org.springframework.web: DEBUG
     org.springframework.boot: DEBUG
-    com.project.user: DEBUG
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql: TRACE
 

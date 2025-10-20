@@ -37,4 +37,8 @@ public class AnalysisDetail {
     @Enumerated(EnumType.STRING)
     @Column(name = "effect", nullable = false, length = 10)
     private Effect effect;
+
+    public void updateDailyReport(DailyReport dailyReport) {
+        this.dailyReport = dailyReport;
+    }
 }

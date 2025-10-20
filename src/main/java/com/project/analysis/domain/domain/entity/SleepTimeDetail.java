@@ -39,4 +39,8 @@ public class SleepTimeDetail {
 
     @Column(name = "rem_sleep_ratio", nullable = false, precision = 4, scale = 1)
     private BigDecimal remSleepRatio;
+
+    public void updateDailyReport(DailyReport dailyReport) {
+        this.dailyReport = dailyReport;
+    }
 }
