@@ -17,4 +17,8 @@ public class AnalyzedSoundEventService {
     public List<AnalyzedSoundEvent> findAll(SleepSession sleepSession) {
         return analyzedSoundEventRepository.findAllBySleepSession(sleepSession);
     }
+
+    public void save(AnalyzedSoundEvent analyzedSoundEvent) {
+        analyzedSoundEventRepository.save(analyzedSoundEvent);
+    }
 }

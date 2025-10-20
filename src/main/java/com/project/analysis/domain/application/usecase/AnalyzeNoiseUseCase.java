@@ -1,5 +1,6 @@
 package com.project.analysis.domain.application.usecase;
 
+import com.project.analysis.domain.infra.kafka.producer.AnalyzedSoundEventProducer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -8,7 +9,9 @@ import org.springframework.web.multipart.MultipartFile;
 @RequiredArgsConstructor
 public class AnalyzeNoiseUseCase {
 
-    public void execute(Long userNo, MultipartFile noise) {
+    private final AnalyzedSoundEventProducer analyzedSoundEventProducer;
 
+    public void execute(Long userNo, MultipartFile noise) {
+        analyzedSoundEventProducer.sendSoundEventAnalysisMessage(userNo, noise);
     }
 }

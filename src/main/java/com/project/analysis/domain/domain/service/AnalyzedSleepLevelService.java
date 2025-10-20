@@ -17,4 +17,8 @@ public class AnalyzedSleepLevelService {
     public List<AnalyzedSleepLevel> findAll(SleepSession sleepSession) {
         return analyzedSleepLevelRepository.findAllBySleepSession(sleepSession);
     }
+
+    public void save(AnalyzedSleepLevel analyzedSleepLevel) {
+        analyzedSleepLevelRepository.save(analyzedSleepLevel);
+    }
 }
