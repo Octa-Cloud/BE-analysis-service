@@ -85,6 +85,14 @@ springdoc:
   paths-to-match:
     - /api/**
 
+ai-analysis:
+  model:
+    base-url: ${AI_ANALYSIS_MODEL_BASE_URL:http://localhost:8000}
+    timeout: ${AI_ANALYSIS_MODEL_TIMEOUT:30000}
+    retry:
+      max-attempts: ${AI_ANALYSIS_MODEL_RETRY_MAX_ATTEMPTS:3}
+      delay: ${AI_ANALYSIS_MODEL_RETRY_DELAY:1000}
+
 management:
   endpoints:
     web:
